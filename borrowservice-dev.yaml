@@ -1,22 +1,27 @@
 server:
-  port: 8201
+  port: 8301
   
 spring:
   application:
-    name: bookservice
+    name: borrowservice
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/cloudstudy
     username: root
     password: root
+
 eureka:
   client:
     service-url:
       defaultZone: http://eureka02:8802/eureka,http://eureka01:8801/eureka
+feign: 
+  circuitbreaker:
+    #打开Feign服务熔断
+    enabled: true
+
 #暴露给actuator进行监控的配置
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-        

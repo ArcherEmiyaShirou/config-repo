@@ -1,9 +1,9 @@
-server:
-  port: 8201
-  
+#server:
+#  port: 8101
+
 spring:
   application:
-    name: bookservice
+    name: userservice
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/cloudstudy
@@ -13,10 +13,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka02:8802/eureka,http://eureka01:8801/eureka
+      
 #暴露给actuator进行监控的配置
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
-        
+        include: '*'
